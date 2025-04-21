@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text">#4254C1</color>
+    <color name="button">#2196F3</color>
+    <color name="background">#040928</color>
+    <color name="tabLayout">#348B8C90</color>
+    <color name="star">#2196F3</color>
+</resources>

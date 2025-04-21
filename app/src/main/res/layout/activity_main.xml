@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/background">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="455dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/dodge" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dodge"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Challenger SRT"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="The Dodge Challenger R/T is a classic American muscle car, featuring a 5.7-liter HEMI V8 engine that produces 375 horsepower"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <!-- Buttons and Star Icon -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- Buy and Sell Buttons -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buyButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Buy"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/button" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/sellButton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sell"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/button" />
+
+                        <!-- Star Icon -->
+                        <ImageView
+                            android:id="@+id/starIcon1"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="160dp"
+                            android:src="@drawable/ic_star_outline"
+                            android:onClick="toggleStar"
+                            android:tag="1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Media -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="455dp"
+                        app:srcCompat="@drawable/porshe"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Porshe"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="911 GT3 RS"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="The Porsche 911 GT3 RS is a high-performance sports car with a 4.0-liter naturally aspirated engine, delivering 525 PS (386 kW) and advanced aerodynamics for exceptional track performance"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <!-- Buttons and Star Icon -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- Buy and Sell Buttons -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buyButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Buy"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/button" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/sellButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sell"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/button" />
+
+                        <!-- Star Icon -->
+                        <ImageView
+                            android:id="@+id/starIcon2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="160dp"
+                            android:src="@drawable/ic_star_outline"
+                            android:onClick="toggleStar"
+                            android:tag="2" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Media -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="455dp"
+                        app:srcCompat="@drawable/ferrari"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ferrari"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceTitleMedium" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="LaFerrari"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="The Ferrari LaFerrari is a limited-production hybrid hypercar, combining a 6.3-liter V12 engine with an electric motor to produce a total of 950 horsepower."
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <!-- Buttons and Star Icon -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <!-- Buy and Sell Buttons -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buyButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Buy"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/button" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/sellButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sell"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/button" />
+
+                        <!-- Star Icon -->
+                        <ImageView
+                            android:id="@+id/starIcon3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="160dp"
+                            android:src="@drawable/ic_star_outline"
+                            android:onClick="toggleStar"
+                            android:tag="3" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:tabMode="fixed"
+        app:tabIndicatorColor="@color/black"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/tabLayout">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/home" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/user" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/info" />
+    </com.google.android.material.tabs.TabLayout>
+</LinearLayout>
