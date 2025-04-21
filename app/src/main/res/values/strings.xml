@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Task1_ActivityLifeCycleMethods</string>
     <string name="menu">menu</string>
+    <string name="profle">profle</string>
 </resources>
