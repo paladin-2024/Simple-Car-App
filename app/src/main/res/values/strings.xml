@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Task1_ActivityLifeCycleMethods</string>
+    <string name="app_name">Car Catalogue</string>
     <string name="menu">menu</string>
-    <string name="profle">profle</string>
+    <string name="profile">profile</string>
 </resources>

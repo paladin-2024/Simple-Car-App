@@ -1,24 +1,45 @@
 package com.example.task1_activitylifecyclemethods;
 
-import android.os.Bundle;
+import static androidx.core.app.ActivityCompat.finishAffinity;
 
-import androidx.activity.EdgeToEdge;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class splashscreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            );
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
+        }
+
         setContentView(R.layout.activity_splashscreen);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        new Handler().postDelayed(() -> {
+            startActivity(new Intent(this, MainActivity.class));
+            finishAffinity();
+        }, 3000);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Clear any pending transitions
+        overridePendingTransition(0, 0);
     }
 }
