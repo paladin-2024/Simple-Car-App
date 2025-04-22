@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.task1_activitylifecyclemethods.viewmodels.UserViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user"
+                app:imageBitmap="@{viewModel.profileImage}"
+                android:onClick="@{() -> viewModel.setProfileImage(null)}"/>
+
+            <!-- Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.name}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.email}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Phone -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone"
+                    android:inputType="phone"
+                    android:text="@={viewModel.phone}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Date of Birth -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dobInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DOB"
+                    android:focusable="false"
+                    android:text="@{viewModel.userProfile.dob}"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Save"
+                android:onClick="@{() -> viewModel.saveProfile()}"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
